@@ -1,0 +1,90 @@
+---
+import siteConfig from '../data/site-config';
+
+const socialLinks = siteConfig.socialLinks || [];
+const navLinks = siteConfig.footerNavLinks || [];
+---
+
+<footer class="w-full max-w-3xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14 footer-animate">
+    {
+        navLinks.length > 0 && (
+            <div class="mb-4 flex flex-wrap gap-x-6 gap-y-1 footer-nav">
+                {navLinks.map((link) => (
+                    <a class="font-serif hover:underline hover:underline-offset-2 footer-link" href={link.href}>
+                        {link.text}
+                    </a>
+                ))}
+            </div>
+        )
+    }
+    <div
+        class:list={[
+            'pt-6 flex flex-col gap-4 border-t border-dashed border-main footer-content',
+            { 'sm:flex-row-reverse sm:justify-between sm:items-center': socialLinks.length > 0 }
+        ]}
+    >
+        {
+            socialLinks.length > 0 && (
+                <div class="flex flex-wrap gap-x-4 gap-y-1 social-links">
+                    {socialLinks.map((link) => (
+                        <a
+                            class="inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2 social-link"
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferer"
+                        >
+                            {link.text}
+                        </a>
+                    ))}
+                </div>
+            )
+        }
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 copyright">
+            <p class="text-sm">
+                &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import { fadeInUp } from '../utils/animation-utils';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('astro:page-load', () => {
+        // Footer animations
+        const footer = document.querySelector('.footer-animate');
+        if (!footer) return;
+
+        const footerContent = footer.querySelector('.footer-content');
+        const footerLinks = Array.from(footer.querySelectorAll('.footer-link'));
+        const socialLinks = Array.from(footer.querySelectorAll('.social-link'));
+        const copyright = footer.querySelector('.copyright');
+
+        ScrollTrigger.create({
+            trigger: footer,
+            start: 'top bottom-=100',
+            once: true,
+            onEnter: () => {
+                // Animate the footer border
+                gsap.fromTo(footerContent, { width: 0, opacity: 0 }, { width: '100%', opacity: 1, duration: 0.8, ease: 'power2.out' });
+
+                // Use consolidated animation functions
+                if (footerLinks.length > 0) {
+                    fadeInUp(footerLinks, { delay: 0.3 });
+                }
+
+                if (socialLinks.length > 0) {
+                    fadeInUp(socialLinks, { delay: 0.5 });
+                }
+
+                if (copyright) {
+                    fadeInUp(copyright, { delay: 0.6, y: 0 });
+                }
+            }
+        });
+    });
+</script>

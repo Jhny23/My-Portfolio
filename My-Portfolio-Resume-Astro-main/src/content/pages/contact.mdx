@@ -1,0 +1,67 @@
+---
+title: "Connect with me."
+seo:
+  title: "Get in Touch"
+  description: "Contact Shivam M. Salunkhe for collaboration opportunities, project inquiries, or just to connect."
+---
+
+import { Image } from 'astro:assets';
+import RemixIcon from '../../components/RemixIcon.astro';
+
+# *Contact*
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p>Thank you for your interest in connecting! I'm always open to discussing new projects, creative collaborations, or just having a conversation about digital art and technology.</p>
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+  <div className="bg-muted p-6 rounded-lg shadow-md">
+    <div className="flex items-center mb-6">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="mail-line" size="24" />
+      </div>
+      <div>
+        <h2 className="text-xl font-serif italic">Email</h2>
+        <p>Direct communication for inquiries and collaborations</p>
+      </div>
+    </div>
+    
+    <div className="p-4 bg-main text-main rounded-lg">
+      <p className="mb-2">Reach out directly at:</p>
+      <a href="mailto:kimeujohnn@gmail.com" className="font-bold text-lg underline">kimeujohnn@gmail.com</a>
+      <p className="text-sm mt-2">I aim to respond to all inquiries within 48 hours.</p>
+    </div>
+  </div>
+  
+  <div className="bg-muted p-6 rounded-lg shadow-md">
+    <div className="flex items-center mb-6">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="add-box-line" size="24" />
+      </div>
+      <div>
+        <h2 className="text-xl font-serif italic">Professional Profiles</h2>
+        <p>View my portfolio and coding projects</p>
+      </div>
+    </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+      
+      <a href="https://linkedin.com/in/" target="_blank" className="p-4 bg-main text-main rounded-lg flex flex-col items-center text-center transition hover:opacity-90">
+        <RemixIcon name="linkedin-line" size="24" class="mb-2" />
+        <span className="font-bold">LinkedIn</span>
+        <span className="text-sm">Connect with me </span>
+      </a>
+      
+      <a href="https://github.com/" target="_blank" className="p-4 bg-main text-main rounded-lg flex flex-col items-center text-center transition hover:opacity-90">
+        <RemixIcon name="github-line" size="24" class="mb-2" />
+        <span className="font-bold">GitHub</span>
+        <span className="text-sm">coding projects</span>
+      </a>    </div>
+  </div>
+</div>
+
+
+
+<div className="bg-main text-main p-6 rounded-lg text-center">
+  <p className="text-xl font-serif italic">Sorry for not responding, I was in a different realm!</p>
+</div>

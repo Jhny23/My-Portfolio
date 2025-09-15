@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import RemixIcon from '../components/RemixIcon.astro';
+
+type Props = HTMLAttributes<'i'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<RemixIcon name="arrow-left-line" class={className} {...props} />

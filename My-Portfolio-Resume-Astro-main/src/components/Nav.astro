@@ -1,0 +1,233 @@
+---
+import NavLink from './NavLink.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import TimeDisplay from './TimeDisplay.astro';
+import siteConfig from '../data/site-config';
+
+const navLinks = siteConfig.headerNavLinks || [];
+---
+
+<nav class="min-h-10 pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8 nav-animate">
+    <!-- Time Display - Top Left (Hidden on Mobile) -->
+    <div class="absolute left-0 top-4 z-10 md:top-8 hidden md:block">
+        <TimeDisplay />
+    </div>
+
+    {
+        navLinks.length > 0 && (
+            <div class="w-full max-w-3xl mx-auto relative">
+                <button
+                    class="menu-toggle cursor-pointer w-12 h-12 -ml-1 flex items-center justify-center relative z-30 md:hidden touch-target"
+                    aria-label="Open Menu"
+                    aria-expanded="false"
+                    aria-controls="menu-items"
+                >
+                    <span class="menu-toggle-icon w-6 h-px relative bg-current" />
+                </button>
+                <ul
+                    id="menu-items"
+                    class="menu flex gap-6 max-md:flex-col max-md:gap-1 max-md:absolute max-md:-top-2.5 max-md:-left-2.5 max-md:max-w-64 max-md:px-3 max-md:pt-16 max-md:pb-10 max-md:z-20 max-md:bg-main max-md:border max-md:border-dashed max-md:border-main"
+                >
+                    {navLinks.map((link, index) => (
+                        <li class="py-2 nav-item" data-index={index}>
+                            <NavLink
+                                class="text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base py-2 px-1 block touch-target"
+                                href={link.href}
+                            >
+                                {link.text}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
+    <!-- Theme Toggle - Top Right -->
+    <div class="absolute right-0 top-4 z-10 md:top-8 theme-toggle-wrapper">
+        <ThemeToggle />
+    </div>
+</nav>
+
+<style>
+    @reference "tailwindcss";
+
+    @media (max-width: 767px) {
+        .menu {
+            @apply invisible opacity-0;
+            width: calc(100% + 1.25rem);
+            transform: translateZ(0); /* Force hardware acceleration */
+        }
+        .menu.is-visible {
+            @apply visible opacity-100;
+            transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
+        .menu-toggle {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            position: relative;
+            z-index: 31;
+        }
+
+        .menu-toggle-icon {
+            transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+            transform: translateZ(0); /* Force hardware acceleration */
+        }
+        .menu-toggle.is-active .menu-toggle-icon {
+            @apply w-0;
+            transition: width 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-toggle-icon:before,
+        .menu-toggle-icon:after {
+            @apply w-6 h-px absolute left-1/2 top-0 origin-center -translate-x-1/2 bg-current;
+            content: '';
+            transform: translateZ(0); /* Force hardware acceleration */
+            transition:
+                rotate 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+        .menu-toggle-icon:before {
+            @apply -mt-1.5;
+        }
+        .menu-toggle-icon:after {
+            @apply mt-1.5;
+        }
+        .menu-toggle.is-active .menu-toggle-icon:before,
+        .menu-toggle.is-active .menu-toggle-icon:after {
+            @apply mt-0;
+            transition:
+                margin 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+                rotate 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+        .menu-toggle.is-active .menu-toggle-icon:before {
+            @apply rotate-45;
+        }
+        .menu-toggle.is-active .menu-toggle-icon:after {
+            @apply -rotate-45;
+        }
+    }
+
+    .touch-target {
+        @apply min-h-[44px] min-w-[44px];
+    }
+</style>
+
+<script>
+    import { animateMobileMenu, animateNavItems } from '../utils/animation-utils';
+
+    let menuToggleBtn: HTMLElement | null = null;
+    let menu: HTMLElement | null = null;
+    let isAnimating = false;
+
+    function menuToggle() {
+        // Clean up existing event listeners
+        if (menuToggleBtn) {
+            menuToggleBtn.removeEventListener('click', handleMenuClick);
+        }
+
+        menu = document.querySelector('.menu');
+        menuToggleBtn = document.querySelector('.menu-toggle');
+
+        if (!menuToggleBtn || !menu) return;
+
+        menuToggleBtn.addEventListener('click', handleMenuClick);
+    }
+
+    function handleMenuClick() {
+        if (isAnimating || !menuToggleBtn || !menu) return;
+
+        isAnimating = true;
+        const isMenuExpanded = menuToggleBtn.getAttribute('aria-expanded') === 'true';
+
+        menuToggleBtn.classList.toggle('is-active');
+        menuToggleBtn.setAttribute('aria-expanded', isMenuExpanded ? 'false' : 'true');
+        menuToggleBtn.setAttribute('aria-label', isMenuExpanded ? 'Open Menu' : 'Close Menu');
+
+        if (!isMenuExpanded) {
+            // Opening menu
+            menu.classList.add('is-visible');
+            const menuItems = Array.from(document.querySelectorAll('.nav-item'));
+            animateMobileMenu(menuItems, true)
+                .then(() => {
+                    isAnimating = false;
+                })
+                .catch(() => {
+                    isAnimating = false;
+                });
+        } else {
+            // Closing menu
+            const menuItems = Array.from(document.querySelectorAll('.nav-item'));
+            animateMobileMenu(menuItems, false)
+                .then(() => {
+                    menu?.classList.remove('is-visible');
+                    isAnimating = false;
+                })
+                .catch(() => {
+                    menu?.classList.remove('is-visible');
+                    isAnimating = false;
+                });
+        }
+    }
+
+    // Close menu when clicking outside
+    function handleOutsideClick(event: Event) {
+        const target = event.target as HTMLElement;
+        if (!menu?.classList.contains('is-visible')) return;
+
+        if (!menu.contains(target) && !menuToggleBtn?.contains(target)) {
+            if (menuToggleBtn && !isAnimating) {
+                handleMenuClick();
+            }
+        }
+    }
+
+    // Close menu on escape key
+    function handleEscape(event: KeyboardEvent) {
+        if (event.key === 'Escape' && menu?.classList.contains('is-visible')) {
+            if (menuToggleBtn && !isAnimating) {
+                handleMenuClick();
+            }
+        }
+    }
+
+    // Initialize animations
+    function initializeNav() {
+        menuToggle();
+
+        // Add global event listeners
+        document.addEventListener('click', handleOutsideClick);
+        document.addEventListener('keydown', handleEscape);
+
+        // Animate nav items on page load
+        const navItems = Array.from(document.querySelectorAll('.nav-item'));
+        const timeDisplay = document.querySelector('.time-display');
+        const themeToggle = document.querySelector('.theme-toggle-wrapper');
+
+        animateNavItems(navItems, 0.1);
+
+        // Animate time display (only visible on desktop)
+        if (timeDisplay) {
+            animateNavItems([timeDisplay], 0.3);
+        }
+
+        // Animate theme toggle
+        if (themeToggle) {
+            animateNavItems([themeToggle], 0.4);
+        }
+    }
+
+    // Cleanup function
+    function cleanupNav() {
+        if (menuToggleBtn) {
+            menuToggleBtn.removeEventListener('click', handleMenuClick);
+        }
+        document.removeEventListener('click', handleOutsideClick);
+        document.removeEventListener('keydown', handleEscape);
+        isAnimating = false;
+    }
+
+    // Page load events
+    document.addEventListener('astro:page-load', initializeNav);
+    document.addEventListener('astro:before-swap', cleanupNav);
+    document.addEventListener('astro:after-swap', initializeNav);
+</script>

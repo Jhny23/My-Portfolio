@@ -1,0 +1,44 @@
+---
+import { marked } from 'marked';
+import siteConfig from '../data/site-config';
+import Button from './Button.astro';
+
+const hero = siteConfig.hero;
+---
+
+{
+    (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
+        <section class="w-full flex flex-col gap-8 mb-16 sm:mb-24 hero-section">
+            {hero.title && <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight animate-on-scroll">{hero.title}</h1>}
+            {hero.image?.src && (
+                <figure class="hero-image animate-on-scroll">
+                    <img class="w-full" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
+                    {hero.image.caption && <figcaption class="mt-1.5 text-[12px] sm:text-sm">{hero.image.caption}</figcaption>}
+                </figure>
+            )}
+            {hero.text && <div class="max-w-none prose sm:prose-lg animate-on-scroll" set:html={marked.parse(hero.text)} />}
+            {hero.actions && hero.actions.length > 0 && (
+                <div class="flex flex-wrap gap-4 button-wrapper animate-on-scroll">
+                    {hero.actions.map((action) => (
+                        <div class="hover:scale-105 transition-transform duration-300">
+                            <Button href={action.href}>{action.text}</Button>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </section>
+    )
+}
+
+<script>
+    import { fadeInUp } from '../utils/animation-utils';
+
+    document.addEventListener('astro:page-load', () => {
+        // Staggered animation for hero section elements
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            const heroElements = Array.from(heroSection.querySelectorAll('.animate-on-scroll'));
+            fadeInUp(heroElements, { duration: 0.8, stagger: 0.15, delay: 0.2 });
+        }
+    });
+</script>

@@ -1,0 +1,79 @@
+---
+title: "3D Art Gallery"
+seo:
+  title: "3D Art Gallery"
+  description: "A showcase of 3D artwork and renders"
+---
+
+import RemixIcon from '../../components/RemixIcon.astro';
+import ResponsiveGallery from '../../components/ResponsiveGallery';
+
+export const artworks = [
+  { image: '/3d-art/dbz.png', text: 'DBZ' },
+  { image: '/3d-art/dezi.png', text: 'Daizy' },
+  { image: '/3d-art/edo.jpg', text: 'Edo' },
+  { image: '/3d-art/fiddle.jpg', text: 'Fiddler' },
+  { image: '/3d-art/roz.png', text: 'Roze' },
+  { image: '/3d-art/skull.png', text: 'Skkull' },
+  { image: '/3d-art/tree.png', text: 'Field' },
+  { image: '/3d-art/tulip.jpg', text: 'Tullip' },
+  { image: '/3d-art/alan.jpg', text: 'Ignite' },
+  { image: '/3d-art/elfe.jpg', text: 'Elfe' },
+  { image: '/3d-art/bt1.jpg', text: 'Bit' },
+  { image: '/3d-art/bt2.jpg', text: 'Coin' },
+  { image: '/3d-art/oost1.jpg', text: 'Oost' },
+  { image: '/3d-art/oost2.jpg', text: 'Oost' },
+  { image: '/3d-art/carcloudone.png', text: 'Cloud9' },
+  { image: '/3d-art/cadmium.jpg', text: 'Melody' }
+];
+
+<div className="mb-8">
+  <h1 className="text-3xl font-bold mb-6">
+    <em>Gallery</em>
+  </h1>
+  
+  <div className="flex items-center justify-between">
+    <div className="prose prose-slate dark:prose-invert">
+      <p>really inspired by the fear of being average. <span className="hidden lg:inline">Use cursor drag to navigate through the circular gallery.</span><span className="lg:hidden">Swipe between images.</span></p>
+    </div>
+    
+    <div className="flex gap-4 ml-6">
+      <a href="" target="_blank" rel="noopener noreferrer" 
+         className="group relative inline-flex items-center justify-center w-12 h-12 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" 
+         aria-label="View more on Behance">
+        <RemixIcon name="behance-line" size="24" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-all duration-300 group-hover:scale-110" />
+      </a>
+      <a href="https://www.instagram.com/smsxart" target="_blank" rel="noopener noreferrer" 
+         className="group relative inline-flex items-center justify-center w-12 h-12 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" 
+         aria-label="Follow on Instagram">
+        <RemixIcon name="instagram-line" size="24" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-all duration-300 group-hover:scale-110" />
+      </a>
+    </div>  </div>
+</div>
+
+{/* Scroll Down Indicator */}
+<div className="flex justify-center mb-2 sm:mb-0">
+  <a 
+    href="#gallery-section"
+    className="animate-bounce cursor-pointer hover:scale-110 transition-transform duration-300 group no-underline"
+    aria-label="Scroll to gallery"
+  >
+    <div className="p-2 sm:p-2 rounded-full border border-gray-300 dark:border-gray-600 group-hover:border-gray-500 dark:group-hover:border-gray-400 transition-all duration-300 bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm">
+      <RemixIcon name="arrow-down-line" size="18" class="sm:size-20 text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-all duration-300 group-hover:scale-110" />
+    </div>
+  </a>
+</div>
+
+<section id="gallery-section" class="max-w-7xl mx-auto py-0 px-3 sm:py-2 sm:px-6 -mt-8 sm:-mt-16">
+
+  <div 
+    className="h-[500px] sm:h-[600px] lg:h-[700px] overflow-hidden touch-none"
+  >    <ResponsiveGallery 
+      items={artworks}
+      bend={3} 
+      textColor="#ffffff" 
+      borderRadius={0.05}
+      font="600 20px 'Newsreader Variable', 'Newsreader', serif"
+      client:load    />
+  </div>
+</section>
