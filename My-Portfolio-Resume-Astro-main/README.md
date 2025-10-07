@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨✨ Shivam M. Salunkhe | Portfolio
+# 🎨✨ John Kimeu | Portfolio
 
 ### *CGI & VFX Artist • AI Developer • Web App Creator*
 
@@ -236,7 +236,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **⭐ Found this helpful? Star the repository!**
 
-**Made with ❤️ by [Shivam M. Salunkhe](https://smsx.netlify.app)**
+**Made with ❤️ by [John Kimeu]**
 
 *"Where Art Meets Technology"*
 

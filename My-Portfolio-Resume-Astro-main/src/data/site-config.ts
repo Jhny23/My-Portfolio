@@ -32,13 +32,13 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    website: 'https://smsx.netlify.app',
+    website: 'https://kimeu-johnn,vercel,app/',
     title: 'John Kimeu',
-    subtitle: '3D Artist & AI Developer',
-    description: 'Portfolio of Shivam M. Salunkhe - CGI and VFX Artist, AI Developer, Prompt Engineer, and Web App Developer',
+    subtitle: '3D Artist &  Developer',
+    description: 'Portfolio of John Kimeu -  VFX Artist, AI Developer, Prompt Engineer, and Web App Developer',
     image: {
-        src: '/3d-art/gibli.png',
-        alt: 'Shivam M. Salunkhe - Portfolio'
+        src: '/3d-art/jjj.png',
+        alt: 'John Kimeu - Portfolio'
     },
     headerNavLinks: [
         {
@@ -108,8 +108,8 @@ const siteConfig: SiteConfig = {
             "Skilled in AI development, prompt engineering, and web applications, with a focus on turning ideas into practical and innovative solutions.\n\n" +
             "A background in interior design and computer applications provides both a creative eye and technical problem-solving ability — blending how things look with how they work. exploring the possibilities of artificial intelligence in creative applications.",
         image: {
-            src: '/gibli.png',
-            alt: 'Shivam M. Salunkhe'
+            src: '/jjj.png',
+            alt: 'John Kimeu'
         },
         actions: [
             {
