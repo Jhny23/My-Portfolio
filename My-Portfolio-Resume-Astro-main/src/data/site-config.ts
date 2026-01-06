@@ -34,7 +34,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
     website: 'https://kimeu-johnn,vercel,app/',
     title: 'John Kimeu',
-    subtitle: '3D Artist &  Developer',
+    subtitle: 'Creative Artist &  Developer',
     description: 'Portfolio of John Kimeu -  VFX Artist, AI Developer, Prompt Engineer, and Web App Developer',
     image: {
         src: '/3d-art/jjj.png',
