@@ -35,7 +35,7 @@ const siteConfig: SiteConfig = {
     website: 'https://kimeu-johnn,vercel,app/',
     title: 'John Kimeu',
     subtitle: 'Creative Artist &  Developer',
-    description: 'Portfolio of John Kimeu -  VFX Artist, AI Developer, Prompt Engineer, and Web App Developer',
+    description: 'Portfolio of John Kimeu -  Photographer, AI Developer, Cinephile, and Web App Developer',
     image: {
         src: '/3d-art/jjj.png',
         alt: 'John Kimeu - Portfolio'
