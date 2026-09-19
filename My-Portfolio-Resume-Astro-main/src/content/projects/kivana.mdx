@@ -1,0 +1,128 @@
+---
+title: 'Kivana: Cruelty-Free Skincare E-Commerce'
+description: A full skincare storefront — shop, cart, product pages, editorial content and newsletter — built with a soft, editorial aesthetic.
+publishDate: '2026-04-10'
+isFeatured: true
+seo:
+  image:
+    src: '/project ss/kivana/kivana.png'
+    alt: Kivana skincare website preview
+---
+import { Image } from 'astro:assets';
+import RemixIcon from '../../components/RemixIcon.astro';
+
+<div className="relative mb-8 rounded-lg overflow-hidden">  <Image 
+    src="/project ss/kivana/kivana.png" 
+    alt="Kivana skincare website preview" 
+    width={1920} 
+    height={978}
+    className="w-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+    <div className="p-6">
+      <span className="bg-main text-main px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">E-Commerce</span>
+      <h1 className="text-white text-2xl md:text-3xl font-bold">Kivana</h1>
+    </div>
+  </div>
+</div>
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p className="text-lg font-medium">
+    <strong>Project Overview:</strong> Kivana is a cruelty-free, vegan skincare brand storefront — a full e-commerce build covering product browsing by category (Cleanse, Treat, Moisturize), individual product pages with stock states, a cart, an editorial content section, and a newsletter signup. The visual direction leans soft and editorial — warm neutral tones, large serif headlines, and full-bleed lifestyle photography — to match a premium clean-beauty brand rather than a generic storefront template.
+  </p>
+</div>
+
+## Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="shopping-bag-3-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Full Storefront</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Shop by category, product detail pages, and cart with live stock states (bestseller, low stock, sold out)</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Announcement bar and newsletter capture built into the shopping flow</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="quill-pen-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Brand &amp; Content</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>An Editorial section for brand storytelling (e.g. sustainability content) separate from the shop</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Full SEO/social card metadata configured for clean link previews</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+## Technology Stack
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="reactjs-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Framework</h4>
+      <p className="text-sm">Next.js, TypeScript</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="paint-brush-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Styling</h4>
+      <p className="text-sm">Tailwind CSS, custom editorial type system</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="shopping-cart-2-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Commerce</h4>
+      <p className="text-sm">Cart, product catalog, and stock-state logic</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="settings-3-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Deployment</h4>
+      <p className="text-sm">Vercel</p>
+    </div>
+  </div>
+</div>
+
+## Impact
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <blockquote className="border-l-4 border-main pl-4 italic">
+    <p>A storefront built to feel like a considered beauty brand rather than an out-of-the-box shop template — soft color, real editorial content, and a shopping flow that stays out of its own way.</p>
+  </blockquote>
+</div>
+
+<div className="bg-gradient-to-r from-main/20 to-main/10 p-6 rounded-lg mb-8 text-center">
+  <h2 className="text-2xl font-bold mb-4">Visit the Store</h2>
+  <a href="https://kivana-skin.vercel.app/" target="_blank" className="inline-flex items-center px-6 py-3 bg-main text-main rounded-lg hover:opacity-90 transition-opacity">
+    <span className="font-bold mr-2">Shop Kivana</span>
+    <RemixIcon name="external-link-line" size="20" />
+  </a>
+</div>

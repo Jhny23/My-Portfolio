@@ -1,0 +1,128 @@
+---
+title: 'Festus Kirr: Film Director Portfolio'
+description: A client portfolio for a Kenyan film director and cinematographer, built to showcase brand work for names like DHL, KWS, and Carrefour.
+publishDate: '2026-02-20'
+isFeatured: true
+seo:
+  image:
+    src: '/project ss/festus-kirr/festus-kirr.png'
+    alt: Festus Kirr portfolio website preview
+---
+import { Image } from 'astro:assets';
+import RemixIcon from '../../components/RemixIcon.astro';
+
+<div className="relative mb-8 rounded-lg overflow-hidden">  <Image 
+    src="/project ss/festus-kirr/festus-kirr.png" 
+    alt="Festus Kirr portfolio website preview" 
+    width={1919} 
+    height={971}
+    className="w-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+    <div className="p-6">
+      <span className="bg-main text-main px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">Client Portfolio</span>
+      <h1 className="text-white text-2xl md:text-3xl font-bold">Festus Kirr</h1>
+    </div>
+  </div>
+</div>
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p className="text-lg font-medium">
+    <strong>Project Overview:</strong> A portfolio site built for Festus Kirr, a Kenyan film director and cinematographer with over a decade of experience directing commercials, TV ads, and brand campaigns for names including DHL, KWS, and Carrefour. The site needed to do one job well: make the work itself the star, with a clean personal introduction, a services breakdown, a brand-partner showcase, and a portfolio grid, backed by a simple contact flow for new bookings.
+  </p>
+</div>
+
+## Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="film-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Service Breakdown</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Commercials, TV ads, social campaigns, and color grading each given their own clear section</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Brand-partner strip surfacing past clients at a glance</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="mail-send-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Booking-Ready</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Direct contact form plus a downloadable resume for quick vetting by prospective clients</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Light/dark toggle and a warm gradient hero suited to a visual-first, creative audience</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+## Technology Stack
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="reactjs-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Framework</h4>
+      <p className="text-sm">Next.js</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="paint-brush-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Styling</h4>
+      <p className="text-sm">Tailwind CSS, serif-led editorial type</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="contrast-2-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">UX</h4>
+      <p className="text-sm">Light/dark theme toggle</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="settings-3-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Deployment</h4>
+      <p className="text-sm">Vercel</p>
+    </div>
+  </div>
+</div>
+
+## Impact
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <blockquote className="border-l-4 border-main pl-4 italic">
+    <p>A client-facing site that gets out of the way of the reel — clear services, real brand names, and a straightforward path to getting in touch.</p>
+  </blockquote>
+</div>
+
+<div className="bg-gradient-to-r from-main/20 to-main/10 p-6 rounded-lg mb-8 text-center">
+  <h2 className="text-2xl font-bold mb-4">Visit the Site</h2>
+  <a href="https://festuskirr.vercel.app/" target="_blank" className="inline-flex items-center px-6 py-3 bg-main text-main rounded-lg hover:opacity-90 transition-opacity">
+    <span className="font-bold mr-2">See Festus Kirr</span>
+    <RemixIcon name="external-link-line" size="20" />
+  </a>
+</div>

@@ -1,0 +1,96 @@
+---
+title: 'Thought Laboratory: Interactive Philosophy Experiments'
+description: A collection of interactive experiments built on canonical philosophy — positions to take, not essays to read.
+publishDate: '2026-05-01'
+isFeatured: true
+seo:
+  image:
+    src: '/project ss/thought-laboratory/thought-laboratory.png'
+    alt: Thought Laboratory cover
+---
+import { Image } from 'astro:assets';
+import RemixIcon from '../../components/RemixIcon.astro';
+
+<div className="relative mb-8 rounded-lg overflow-hidden">  <Image 
+    src="/project ss/thought-laboratory/thought-laboratory.png" 
+    alt="Thought Laboratory cover" 
+    width={1122} 
+    height={1402}
+    className="w-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+    <div className="p-6">
+      <span className="bg-main text-main px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">Interactive Philosophy</span>
+      <h1 className="text-white text-2xl md:text-3xl font-bold">Thought Laboratory</h1>
+    </div>
+  </div>
+</div>
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p className="text-lg font-medium">
+    <strong>Project Overview:</strong> Thought Laboratory is a collection of interactive experiments built on canonical philosophy — not essays to read or arguments to follow at arm's length, but positions to take under conditions that make taking them difficult. Each experiment is drawn from a thought experiment that changed how philosophers reason, then rebuilt so the visitor has to reason through it themselves rather than just read about it.
+  </p>
+</div>
+
+## Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="lightbulb-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Interactive Experiments</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>A veil-of-ignorance decision game — build a world without knowing where you'll end up in it</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>A Philosophical Health Test — 30 statements that surface where your own beliefs quietly contradict each other</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="book-open-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Canonical Source Material</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Draws directly on primary texts — Laozi's Tao Te Ching, Derek Parfit's Reasons and Persons, and more</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Biographies section giving context on the philosophers behind each experiment</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+## Design Approach
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p>A quiet, typographic, editorial feel — long-form passages of original text (including untranslated Chinese script alongside translation) set against a minimal black-and-white canvas, so the ideas carry the page rather than any decoration. An ambient sound toggle lets visitors choose whether to read in silence or with atmosphere.</p>
+</div>
+
+## Impact
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <blockquote className="border-l-4 border-main pl-4 italic">
+    <p>Most people are surprised by how many tensions their own beliefs contain. Thought Laboratory doesn't tell them they're wrong — it just shows them where.</p>
+  </blockquote>
+</div>
+
+<div className="bg-gradient-to-r from-main/20 to-main/10 p-6 rounded-lg mb-8 text-center">
+  <h2 className="text-2xl font-bold mb-4">Visit the Lab</h2>
+  <a href="https://thought-laboratory.vercel.app/" target="_blank" className="inline-flex items-center px-6 py-3 bg-main text-main rounded-lg hover:opacity-90 transition-opacity">
+    <span className="font-bold mr-2">Try an Experiment</span>
+    <RemixIcon name="external-link-line" size="20" />
+  </a>
+</div>

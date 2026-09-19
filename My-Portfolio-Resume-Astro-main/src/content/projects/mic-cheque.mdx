@@ -1,0 +1,158 @@
+---
+title: 'Mic Cheque Podcast: Website for a Kenyan Comedy Podcast'
+description: A brand-first website for Mic Cheque Podcast, built around the show's own sticker-and-broadcast identity — real hosts, real episodes, real energy.
+publishDate: '2026-09-19'
+isFeatured: true
+seo:
+  image:
+    src: '/project ss/mic-cheque/mic-cheque.png'
+    alt: Mic Cheque Podcast website preview
+---
+import { Image } from 'astro:assets';
+import RemixIcon from '../../components/RemixIcon.astro';
+
+<div className="relative mb-8 rounded-lg overflow-hidden">  <Image 
+    src="/project ss/mic-cheque/mic-cheque.png" 
+    alt="Mic Cheque Podcast website preview" 
+    width={1200} 
+    height={630}
+    className="w-full object-cover" 
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+    <div className="p-6">
+      <span className="bg-main text-main px-3 py-1 rounded-full text-sm font-medium mb-2 inline-block">Podcast Website</span>
+      <h1 className="text-white text-2xl md:text-3xl font-bold">Mic Cheque Podcast</h1>
+    </div>
+  </div>
+</div>
+
+<div className="prose prose-slate dark:prose-invert mb-8">
+  <p className="text-lg font-medium">
+    <strong>Project Overview:</strong> Mic Cheque Podcast is a Kenyan comedy/banter podcast with hosts Chaxy, Mariah and Mwass, releasing new episodes every Wednesday and Sunday. Rather than starting from a generic template, the whole site was built directly around the show's existing brand identity — the sticker-style logo, the marigold-and-ink color language, and a retro-broadcast sensibility — so the website feels like an extension of the show, not a stock podcast landing page.
+  </p>
+</div>
+
+## Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="tv-2-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Real Photographed TVs</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Latest episode thumbnails are composited directly into cut-out photos of real vintage TVs, screen holes measured pixel-for-pixel</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Widescreen thumbnails letterbox naturally inside the 4:3 screens, like an old CRT showing modern content</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="user-smile-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Editorial Host Pages</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Each host's own tagline treated as a real pull-quote, not shrunk into a generic bio paragraph</span>
+      </li>
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Giant ghost numerals and tilted, taped photos give the page scale without adding new colors</span>
+      </li>
+    </ul>
+  </div>
+
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="volume-up-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Video Teaser With Sound Control</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Autoplaying muted clip with a custom on-brand mute toggle, transcoded to both WebM and MP4 so it plays correctly on Safari/iOS</span>
+      </li>
+    </ul>
+  </div>
+
+  <div className="bg-muted p-6 rounded-lg">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-main text-main rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+        <RemixIcon name="calendar-event-line" size="24" />
+      </div>
+      <h3 className="text-xl font-bold">Live Events &amp; Merch</h3>
+    </div>
+    <ul className="space-y-2 pl-4">
+      <li className="flex items-start">
+        <span className="w-1.5 h-1.5 bg-main rounded-full mt-2 mr-2"></span>
+        <span>Real Hangouts event listing with ticket link, and a custom 404 page styled as TV static ("Signal Lost")</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+## Technology Stack
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="reactjs-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Framework</h4>
+      <p className="text-sm">Next.js 15 (App Router), TypeScript</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="paint-brush-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Styling</h4>
+      <p className="text-sm">Tailwind CSS, a custom brand token system</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="magic-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Motion</h4>
+      <p className="text-sm">Framer Motion for scroll-triggered reveals</p>
+    </div>
+    
+    <div className="p-4 bg-background rounded-lg text-center">
+      <div className="w-16 h-16 bg-main text-main rounded-full flex items-center justify-center mx-auto mb-3">
+        <RemixIcon name="settings-3-line" size="24" />
+      </div>
+      <h4 className="font-bold mb-1">Deployment</h4>
+      <p className="text-sm">Vercel</p>
+    </div>
+  </div>
+</div>
+
+## Impact
+
+<div className="bg-muted p-6 rounded-lg mb-8">
+  <blockquote className="border-l-4 border-main pl-4 italic">
+    <p>Instead of a generic podcast template, the show's own sticker logo, color palette and comedic voice run through every page — down to the 404 page and the cookie-adjacent copy.</p>
+  </blockquote>
+</div>
+
+<div className="bg-gradient-to-r from-main/20 to-main/10 p-6 rounded-lg mb-8 text-center">
+  <h2 className="text-2xl font-bold mb-4">Visit the Site</h2>
+  <a href="https://mic-cheque-web.vercel.app/" target="_blank" className="inline-flex items-center px-6 py-3 bg-main text-main rounded-lg hover:opacity-90 transition-opacity">
+    <span className="font-bold mr-2">See Mic Cheque Podcast</span>
+    <RemixIcon name="external-link-line" size="20" />
+  </a>
+</div>
