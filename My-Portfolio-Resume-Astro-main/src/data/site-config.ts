@@ -46,10 +46,6 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Education',
-            href: '/education'
-        },
-        {
             text: 'Experience',
             href: '/experience'
         },
