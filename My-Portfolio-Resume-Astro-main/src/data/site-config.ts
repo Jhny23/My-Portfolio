@@ -102,7 +102,7 @@ const siteConfig: SiteConfig = {
         title: 'Superpositions of me, collapsing as you scroll.',
         text: "A freelance web developer and IT professional based in Kenya, working at the intersection of software, systems, and applied AI.\n\n" +
             "Skilled in full-stack web development, AI development, and prompt engineering, with a focus on turning ideas into practical and innovative solutions.\n\n" +
-            "A broad IT background — spanning technical support, systems administration, and networking — provides both a builder's eye and a troubleshooter's instincts, blending how things look with how they actually work.",
+            "A broad IT background in technical support, systems administration, and networking gives me a builder's eye and a troubleshooter's instincts, so I care about how things look and how they actually work.",
         image: {
             src: '/jjj.png',
             alt: 'John Kimeu'
