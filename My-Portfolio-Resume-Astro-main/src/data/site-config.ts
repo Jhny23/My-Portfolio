@@ -95,7 +95,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'X',
-            href: 'https://x.com/johncult23'
+            href: 'https://twitter.com'
         }
     ],
     hero: {
