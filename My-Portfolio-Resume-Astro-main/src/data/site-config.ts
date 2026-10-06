@@ -100,9 +100,9 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Superpositions of me, collapsing as you scroll.',
-        text: "A creative technologist working at the intersection of software design, visual design, and filmography.\n\n" +
-            "Skilled in AI development, prompt engineering, and web applications, with a focus on turning ideas into practical and innovative solutions.\n\n" +
-            "A background in interior design and computer applications provides both a creative eye and technical problem-solving ability — blending how things look with how they work. exploring the possibilities of artificial intelligence in creative applications.",
+        text: "A freelance web developer and IT professional based in Kenya, working at the intersection of software, systems, and applied AI.\n\n" +
+            "Skilled in full-stack web development, AI development, and prompt engineering, with a focus on turning ideas into practical and innovative solutions.\n\n" +
+            "A broad IT background — spanning technical support, systems administration, and networking — provides both a builder's eye and a troubleshooter's instincts, blending how things look with how they actually work.",
         image: {
             src: '/jjj.png',
             alt: 'John Kimeu'
